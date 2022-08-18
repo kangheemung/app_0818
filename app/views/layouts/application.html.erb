@@ -10,6 +10,17 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+        <a href="/">Home</a>
+        <%= link_to "ユーザー一覧","/users/:id/users" %>
+        <%= link_to "投稿一覧", root_path %>
+        <a href="/mypage">マイページ</a>
+        <%= link_to "ログアウト", "/logout", method: :delete %>
+    <% else %>
+        <a href="/">Home</a>
+        <%= link_to '会員登録', signup_path %>
+        <a href="/login">ログイン</a>
+    <% end %>
     <%= yield %>
   </body>
 </html>
