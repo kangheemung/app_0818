@@ -9,12 +9,16 @@
     <%= f.submit %>
     <% end %>
     
-    <p><% @posts.each do |post|%>
-    <%=link_to post.title,"/posts/:id" %>|<%= post.updated_at %>｜
-    <%= current_user.name %>さんの投稿
-    
-    <% end %></p>
+  <p><% @posts.each do |post|%>
+       <%=link_to post.title,"/post" %>|<%= post.updated_at %>｜
+       <%=%>さんの投稿<br>
+       <% end %></p>
    
 <% else %>
-  <p> <%= link_to "ログイン","/login"%> </p>
+<p> <%= link_to "ログイン","/login"%> </p>
+<p> <% @posts.each do |post|%>
+       <%=link_to post.title,"/post" %>|<%= post.updated_at %>｜
+       <%=%>さんの投稿<br>
+       <% end %></p>
+ 
 <% end %>
