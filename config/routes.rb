@@ -6,7 +6,7 @@ post'posts/create'=>'posts#create',as: 'posts'
 #singup
 #  resource :sessions, only: [:new, :create, :destroy]
 get 'login' => 'sessions#new' 
-post 'login'=>'sessions#create' 
+post 'login'=>'sessions#create' ,as: 'sessions'
 delete 'logout'=>'sessions#destroy'
 #login
 get 'signup' => 'users#new', as: 'signup'
